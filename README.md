@@ -24,3 +24,6 @@ Import the repo, add the env vars, deploy, attach the domain, then submit a test
 Not yet verified: npm install, typecheck, tests, build, rendering, accessibility, Lighthouse, real email delivery.
 Not built: per-page OG images, CTA-click analytics events, Turnstile/durable rate limiting (the in-memory limiter resets per serverless instance), CSP header, Playwright tests, CMS, final logo and favicon (app/icon.svg is a placeholder), real screenshots, team photos.
 Content open items: integration statuses (shown as "To be confirmed"), legal review of /privacy, brand colours (proposed, not official), phone number.
+
+## Design notes
+Light theme: warm off-white #FAF9F6, tinted greens, deep teal-green #1A6B5A primary, warm #D9A46A highlight (proposed, not official brand colours). Bricolage Grotesque for headings, DM Sans for body. Tokens live at the top of app/globals.css. The redesign was not rendered or built in the authoring environment.
