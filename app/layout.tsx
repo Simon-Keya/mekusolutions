@@ -36,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {wa && <a href={`https://wa.me/${wa}`}>WhatsApp</a>}
             <a href="mailto:mekusolutions@gmail.com">mekusolutions@gmail.com</a></span></div></footer>
         {pl && <Script defer data-domain={pl} src="https://plausible.io/js/script.js" />}
+        <Script src="/reveal.js" strategy="afterInteractive" />
       </body>
     </html>
   );
