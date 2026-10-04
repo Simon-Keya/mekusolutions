@@ -1,29 +1,88 @@
-# Meku Solutions website (Next.js 15, TypeScript)
+# Meku Solutions — Corporate Website
 
-## Run
-    npm install
-    cp .env.example .env.local   # fill in values
-    npm run dev                  # http://localhost:3000
-    npm run typecheck && npm test && npm run build
+Next.js 15 + TypeScript production codebase with a **premium light-theme** redesign.
 
-## Environment variables (see .env.example)
-- NEXT_PUBLIC_SITE_URL: production URL (used for canonical, sitemap, robots)
-- RESEND_API_KEY, ENQUIRY_TO_EMAIL, ENQUIRY_FROM_EMAIL: enquiry email (server only). FROM must be a sender verified in Resend.
-- NEXT_PUBLIC_PLAUSIBLE_DOMAIN: enables cookie-free analytics. Events: demo_form_submit_success, project_form_submit_success.
-- NEXT_PUBLIC_WHATSAPP_NUMBER: digits with country code. Empty = no WhatsApp link. Confirm the number first (the brief's has 11 digits).
+**Primary goals:** qualified Restflow demo requests and custom software / integration enquiries.
 
-## Structure
-- content/*.html: page copy (edit here; add pages with a folder under app/)
-- app/api/enquiry: validated, honeypot, rate-limited, sends via Resend; returns success only if the provider accepts
-- components/EnquiryForm.tsx: demo and project enquiry form (shared schema in lib/enquiry.ts)
+## Quick start
 
-## Deploy (Vercel)
-Import the repo, add the env vars, deploy, attach the domain, then submit a test enquiry in production and confirm it arrives.
+```bash
+npm install
+cp .env.example .env.local   # fill values before production
+npm run dev                  # http://localhost:3000
+npm run typecheck && npm test && npm run build
+```
 
-## Status (nothing here has been run; the build environment had no network)
-Not yet verified: npm install, typecheck, tests, build, rendering, accessibility, Lighthouse, real email delivery.
-Not built: per-page OG images, CTA-click analytics events, Turnstile/durable rate limiting (the in-memory limiter resets per serverless instance), CSP header, Playwright tests, CMS, final logo and favicon (app/icon.svg is a placeholder), real screenshots, team photos.
-Content open items: integration statuses (shown as "To be confirmed"), legal review of /privacy, brand colours (proposed, not official), phone number.
+## Environment variables
 
-## Design notes
-Light theme: warm off-white #FAF9F6, tinted greens, deep teal-green #1A6B5A primary, warm #D9A46A highlight (proposed, not official brand colours). Bricolage Grotesque for headings, DM Sans for body. Tokens live at the top of app/globals.css. The redesign was not rendered or built in the authoring environment.
+| Variable | Scope | Purpose |
+|----------|--------|---------|
+| `NEXT_PUBLIC_SITE_URL` | Public | Canonical URL, sitemap, robots |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Public | Digits with country code (e.g. `2547032063606`). **Leave empty until confirmed on WhatsApp.** |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Public | Optional Plausible domain |
+| `RESEND_API_KEY` | Server | Resend API key for enquiry email |
+| `ENQUIRY_TO_EMAIL` | Server | Destination (default mekusolutions@gmail.com) |
+| `ENQUIRY_FROM_EMAIL` | Server | Verified sender in Resend |
+
+Never commit real secrets. Never prefix server secrets with `NEXT_PUBLIC_`.
+
+## Architecture
+
+- `content/*.html` — page copy (edit here; add routes under `app/`)
+- `app/api/enquiry` — validated, honeypot, rate-limited; sends via Resend; success only if provider accepts
+- `components/EnquiryForm.tsx` — Restflow demo + project enquiry (shared Zod schema in `lib/enquiry.ts`)
+- `public/trace.js` — conceptual Restflow Trace interaction
+- `app/globals.css` — full design system (warm light theme)
+
+## Design system (temporary until official brand codes)
+
+- Canvas: `#FAF9F6` / secondary `#F1F3F0`
+- Accent: forest green `#236B55` / dark `#174B3B`
+- Warm highlight: `#D9A46A`
+- Type: Bricolage Grotesque (display) + DM Sans (body)
+
+Flagged for replacement when Meku supplies official logo colours.
+
+## Content integrity
+
+- Restflow is **in pilot**; no invented outcomes, testimonials, or metrics
+- Integrations shown as “To be confirmed”
+- Team: Michael Dondo (Founder), Simon Keya (CTO) only; ~30 people
+- Screenshots are labelled placeholders
+
+## Deploy (Vercel / Netlify)
+
+1. Import repo  
+2. Set environment variables  
+3. Deploy + attach domain + HTTPS  
+4. Submit a test enquiry in production and confirm email delivery  
+5. Verify WhatsApp link only after number confirmation  
+
+`netlify.toml` is included for Netlify users.
+
+## Launch checklist (Meku must supply / confirm)
+
+- [ ] Official logo (SVG preferred) + favicon  
+- [ ] Official brand colour codes (replace temporary palette if different)  
+- [ ] Photographs of Michael Dondo and Simon Keya  
+- [ ] Genuine Restflow product screenshots  
+- [ ] Confirm M-Pesa / printers / eTIMS status (live / in development / possible)  
+- [ ] Confirm WhatsApp Business registration for `0703 206 3606` → set `NEXT_PUBLIC_WHATSAPP_NUMBER=2547032063606`  
+- [ ] Legal review of `/privacy` for Kenyan (and other) requirements  
+- [ ] Resend (or other) account: API key + verified FROM address  
+- [ ] Production `NEXT_PUBLIC_SITE_URL`  
+- [ ] Optional: Plausible domain  
+- [ ] Domain DNS + HTTPS  
+- [ ] Post-deploy: form delivery, Trace, mobile nav, Lighthouse / axe spot-check  
+
+## Scripts
+
+- `npm run dev` — development  
+- `npm run build` — production build  
+- `npm run start` — serve production build  
+- `npm run typecheck` — TypeScript  
+- `npm test` — Vitest (enquiry schema)  
+
+## Redesign notes
+
+See `REDESIGN_NOTES.md` for audit findings, composition principles, and what was intentionally not invented.
