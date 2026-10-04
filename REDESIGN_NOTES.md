@@ -62,6 +62,3 @@
 - Human, clear, approachable copy and layout
 - Business clarity + dual conversion paths
 - Functionality and architecture intact
-
-## Colour and motion layer
-Appended to app/globals.css. Secondary colours (jade, muted blue, gold) have defined roles; motion tokens (--dur-*, --stagger, --ease-out, --rise) are at the top of that block. Hero entrance and Trace detail changes use CSS animation only. Scroll reveals use public/reveal.js (IntersectionObserver, skipped under reduced motion) with [data-reveal]/[data-stagger] attributes in content/*.html. public/trace.js is unchanged.
