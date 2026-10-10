@@ -85,4 +85,4 @@ Flagged for replacement when Meku supplies official logo colours.
 
 ## Redesign notes
 
-See `REDESIGN_NOTES.md` for audit findings, composition principles, layout/spacing refinements, verification status, and what was intentionally not invented.
+See `REDESIGN_NOTES.md` for audit findings, composition principles, and what was intentionally not invented.
