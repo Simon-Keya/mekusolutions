@@ -1,23 +1,23 @@
 /* MEKU SOLUTIONS — Premium Light Design System
-   Warm off-white · Forest-green accent · Editorial type
+   Warm off-white · Orange-yellow accent · Editorial type
    Temporary palette pending official brand codes */
 
 :root {
-  --bg: #FAF9F6;
-  --bg-2: #F1F3F0;
+  --bg: #FFFCF6;
+  --bg-2: #F8F0E4;
   --surface: #FFFFFF;
-  --surface-tint: #EAF0ED;
+  --surface-tint: #FBF1E4;
   --ink: #202923;
   --ink-2: #626B65;
   --ink-3: #818981;
-  --line: #E1E5E0;
-  --line-strong: #C8D0C9;
-  --accent: #236B55;
-  --accent-d: #174B3B;
-  --accent-soft: #E4F0E9;
-  --warm: #D9A46A;
+  --line: #E9DCCB;
+  --line-strong: #D8BFA2;
+  --accent: #C87928;
+  --accent-d: #8F4D16;
+  --accent-soft: #FCE9CC;
+  --warm: #E3A33C;
   --warm-soft: #F7F0E6;
-  --mustard: #D9A46A;
+  --mustard: #E3A33C;
   --on-accent: #FFFFFF;
   --teal: var(--accent);
   --teal-d: var(--accent-d);
@@ -83,8 +83,8 @@ section { padding: var(--sp) 0; }
 .btn-o { background: transparent; color: var(--ink); border-color: var(--line-strong); }
 .btn-o:hover { border-color: var(--ink); background: var(--surface); }
 .btn-t { background: var(--accent); color: var(--on-accent); }
-.btn-warm { background: var(--warm); color: #2A2000; border-color: var(--warm); }
-.btn-warm:hover { background: #c89455; }
+.btn-warm { background: var(--warm); color: #38240D; border-color: var(--warm); }
+.btn-warm:hover { background: #C87928; }
 
 header {
   position: sticky; top: 0; z-index: 50;
@@ -187,7 +187,7 @@ nav .btn { min-height: 2.4rem; padding: 0 1.1rem; font-size: 0.875rem; }
 .scatter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
 .scatter span {
   font-size: 0.8125rem; font-weight: 500; padding: 0.35rem 0.75rem;
-  background: var(--warm-soft); color: #6B4E2A; border-radius: 6px;
+  background: var(--warm-soft); color: #8F4D16; border-radius: 6px;
 }
 
 .approach-list { display: grid; gap: 0; margin-top: 1.5rem; counter-reset: ap; }
@@ -261,9 +261,9 @@ nav .btn { min-height: 2.4rem; padding: 0 1.1rem; font-size: 0.875rem; }
 .person b { display: block; color: var(--ink); }
 .person span { color: var(--ink-2); font-size: 0.875rem; }
 
-.final { background: var(--accent-d); color: #EAF4F0; padding: var(--sp) 0; }
+.final { background: var(--accent-d); color: #FFF3E1; padding: var(--sp) 0; }
 .final h2 { color: #F4FBFA; }
-.final p { color: #B8D4C8; }
+.final p { color: #F0D4A6; }
 .paths { display: grid; gap: 1rem; margin-top: 2rem; }
 @media (min-width: 700px) { .paths { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
 .path {
@@ -271,7 +271,7 @@ nav .btn { min-height: 2.4rem; padding: 0 1.1rem; font-size: 0.875rem; }
   background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .path h3 { color: #F4FBFA; margin-bottom: 0.4rem; }
-.path p { color: #B8D4C8; margin-bottom: 1.25rem; max-width: none; }
+.path p { color: #F0D4A6; margin-bottom: 1.25rem; max-width: none; }
 .path .btn-m { background: #F4FBFA; color: var(--accent-d); border-color: #F4FBFA; }
 .path .btn-m:hover { background: white; }
 .path .btn-o { border-color: rgba(255, 255, 255, 0.4); color: #F4FBFA; }
@@ -396,12 +396,12 @@ input:focus, select:focus, textarea:focus {
    Purposeful visual energy built on the existing light/editorial system.
    -------------------------------------------------------------------------- */
 :root {
-  --accent-fresh: #2D8B6F;
-  --accent-fresh-soft: #E6F4EE;
+  --accent-fresh: #D88932;
+  --accent-fresh-soft: #FBE9D0;
   --accent-blue: #3F718C;
   --accent-blue-soft: #EAF3F7;
-  --accent-peach: #E6B27A;
-  --accent-peach-soft: #FBF1E6;
+  --accent-peach: #E9AD55;
+  --accent-peach-soft: #FFF2D8;
   --accent-lilac: #8175A8;
   --accent-lilac-soft: #F1EFF8;
   --shadow-soft: 0 12px 36px rgba(32, 41, 35, 0.07);
