@@ -35,3 +35,16 @@ The interface has been migrated from the previous temporary forest-green/warm of
 ## Content integrity
 
 Restflow remains in pilot. No fabricated customer outcomes, testimonials, metrics or integration statuses were added.
+
+## Snapshot-inspired layout enhancements
+
+Composition borrowed from the supplied landing-page snapshot, rendered entirely in the existing Meku palette, logo, typography and copy:
+
+- Header: Home / Restflow / Solutions / About / Work / Contact, centred, with an active-page underline (set in `public/motion.js`).
+- Hero: abstract product illustration (laptop + organic blob + floating badge). It is an illustration only; no data or customer claims.
+- "Our solutions" strip under the hero linking to /solutions.
+- Featured product: Restflow Trace moved out of the hero into its own section with a numbered stepper (`public/trace.js`, behaviour unchanged).
+- Process: horizontal numbered timeline with arrows (also on /solutions).
+- Conversion band: rounded dark card, now also on /about.
+- Footer: logo, links and contact icons (email, Instagram).
+- Restflow page: hero illustration, window-frame style on screenshot placeholders, icon chips on feature cards.

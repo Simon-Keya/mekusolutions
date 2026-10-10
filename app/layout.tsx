@@ -22,10 +22,12 @@ export const metadata: Metadata = {
 };
 
 const nav = [
+  ['/', 'Home'],
   ['/restflow', 'Restflow'],
   ['/solutions', 'Solutions'],
-  ['/work', 'Work'],
   ['/about', 'About'],
+  ['/work', 'Work'],
+  ['/contact', 'Contact'],
 ] as const;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -53,7 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <img src="/meku-logo.jpg" alt="Meku Solutions" />
             </a>
             <nav aria-label="Main navigation">
-              {nav.map(([href, label]) => <a key={href} className="dl" href={href}>{label}</a>)}
+              <div className="nav-links">
+                {nav.map(([href, label]) => <a key={href} className="dl" href={href}>{label}</a>)}
+              </div>
               <a className="btn btn-m" href="/contact">Request a Restflow Demo</a>
               <details className="mm">
                 <summary aria-label="Open menu">Menu</summary>
@@ -68,14 +72,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main id="top">{children}</main>
         <footer>
-          <div className="wrap">
-            <span>© Meku Solutions</span>
-            <span>
-              <a href="/contact">Contact</a>
+          <div className="wrap foot">
+            <a className="foot-logo" href="/" aria-label="Meku Solutions home">
+              <img src="/meku-logo.jpg" alt="Meku Solutions" />
+            </a>
+            <nav className="foot-nav" aria-label="Footer navigation">
+              {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
               <a href="/privacy">Privacy</a>
+            </nav>
+            <div className="foot-end">
+              <span>© Meku Solutions</span>
               {wa && <a href={`https://wa.me/${wa}`}>WhatsApp</a>}
-              <a href="mailto:mekusolutions@gmail.com">mekusolutions@gmail.com</a>
-            </span>
+              <a className="foot-icon" href="mailto:mekusolutions@gmail.com" aria-label="Email Meku Solutions">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></svg>
+              </a>
+              <a className="foot-icon" href="https://instagram.com/meku.solutions" aria-label="Meku Solutions on Instagram" rel="noopener">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg>
+              </a>
+            </div>
           </div>
         </footer>
         {pl && <Script defer data-domain={pl} src="https://plausible.io/js/script.js" />}

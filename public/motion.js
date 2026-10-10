@@ -2,6 +2,12 @@
   var root = document.documentElement;
   root.classList.add('js-motion');
 
+  var path = location.pathname.replace(/\/+$/, '') || '/';
+  document.querySelectorAll('header nav a.dl').forEach(function (a) {
+    var h = a.getAttribute('href');
+    if (h === path) a.setAttribute('aria-current', 'page');
+  });
+
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
