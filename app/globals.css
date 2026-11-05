@@ -628,3 +628,48 @@ footer .wrap.foot { display: grid; grid-template-columns: auto 1fr auto; align-i
 .hv-arc { right: 0; }
 .hv-badge { right: 0; }
 .ph1-split h1 { font-size: clamp(2.4rem, 4.6vw, 4.2rem); max-width: 14ch; }
+
+/* Genuine Restflow product presentation — keep the product UI intact inside Meku's brand frame. */
+.hero-product { isolation: isolate; }
+.hero-product .product-window-hero { position: relative; z-index: 1; width: min(100%, 43rem); transform: perspective(1500px) rotateY(-5deg) rotateX(1deg); }
+.product-window { min-width: 0; overflow: hidden; border: 1px solid rgba(33,31,32,.14); border-radius: 1rem; background: #fff; box-shadow: 0 22px 58px rgba(33,31,32,.14), 0 3px 10px rgba(33,31,32,.06); }
+.product-window-bar { min-height: 2.35rem; display: flex; align-items: center; gap: .7rem; padding: .45rem .8rem; border-bottom: 1px solid #eee9e5; background: #fffdfb; color: #716b67; font: 700 .61rem/1.2 var(--font-body); letter-spacing: .075em; }
+.product-window-bar > span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.product-window-bar > b { margin-left: auto; color: #a06b14; font-size: .55rem; letter-spacing: .06em; white-space: nowrap; }
+.window-dots { display: inline-flex; flex: none; gap: .22rem; }
+.window-dots i { width: .42rem; height: .42rem; border-radius: 50%; background: #e7d8ce; }
+.window-dots i:nth-child(2) { background: #f2d98d; }
+.window-dots i:nth-child(3) { background: #efb19a; }
+.product-window > img { display: block; width: 100%; height: auto; aspect-ratio: 1366 / 530; object-fit: cover; object-position: top center; }
+.product-window figcaption { padding: .55rem .8rem .65rem; color: var(--ink-3); font-size: .72rem; background: #fff; }
+.hero-product .hv-badge { z-index: 2; right: -2%; bottom: 2%; }
+.feature-preview { min-width: 0; }
+.image-caption { margin: .7rem 0 0; color: var(--ink-3); font-size: .78rem; }
+.product-gallery { display: grid; gap: clamp(2rem, 4vw, 3.5rem); margin-top: 2.4rem; }
+.product-showcase { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); align-items: center; gap: clamp(1.25rem, 3vw, 2.6rem); }
+.product-showcase:nth-child(even) { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.product-showcase:nth-child(even) .showcase-copy { order: 2; }
+.product-showcase:nth-child(even) figure { order: 1; }
+.product-showcase-wide { grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); border-bottom: 1px solid var(--line-strong); }
+.showcase-copy { max-width: 28rem; }
+.showcase-copy h3 { margin: .65rem 0 .6rem; font: 700 clamp(1.35rem, 2vw, 1.85rem)/1.13 var(--font-display); letter-spacing: -.035em; }
+.showcase-copy p { color: var(--ink-2); line-height: 1.7; }
+.showcase-index { color: #a36c0a; font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
+.product-note { margin-top: 2rem; padding: 1rem 1.1rem; border-left: 3px solid var(--meku-orange); background: #fff; }
+
+@media (max-width: 820px) {
+  .product-showcase, .product-showcase:nth-child(even), .product-showcase-wide { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+  .product-showcase:nth-child(even) .showcase-copy, .product-showcase:nth-child(even) figure { order: initial; }
+  .product-showcase .showcase-copy { order: -1; }
+  .product-showcase:nth-child(even) .showcase-copy { order: -1; }
+  .product-showcase-wide { padding-bottom: 1.5rem; }
+}
+@media (max-width: 520px) {
+  .product-window { border-radius: .7rem; }
+  .product-window-bar { min-height: 2rem; padding-inline: .55rem; gap: .45rem; }
+  .product-window-bar > b { font-size: .48rem; }
+  .window-dots i { width: .34rem; height: .34rem; }
+  .hero-product .product-window-hero { transform: none; }
+  .hero-product .hv-badge { right: 0; bottom: -3%; }
+  .product-gallery { gap: 2rem; margin-top: 1.6rem; }
+}

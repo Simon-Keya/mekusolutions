@@ -47,4 +47,6 @@ Composition borrowed from the supplied landing-page snapshot, rendered entirely 
 - Process: horizontal numbered timeline with arrows (also on /solutions).
 - Conversion band: rounded dark card, now also on /about.
 - Footer: logo, links and contact icons (email, Instagram).
-- Restflow page: hero illustration, window-frame style on screenshot placeholders, icon chips on feature cards.
+- Restflow page: genuine dashboard hero and six screenshot-led product demonstrations for dashboard, inventory, batch control, POS, recent orders and stock variance.
+- Home page: genuine Restflow dashboard preview in the hero and inventory screenshot in the flagship-product section.
+- Screenshot preparation: browser chrome, taskbar, account footer and visible staff names removed or softened; original product UI retained.

@@ -39,8 +39,14 @@ npm run build
 - `public/trace.js` — conceptual Restflow Trace interaction
 - `public/motion.js` — progressive reveal motion system
 - `public/meku-logo.jpg` — cropped supplied Meku Solutions wordmark
+- `public/images/restflow-*.webp` — six prepared Restflow product screenshots used in the home and product showcases
 - `app/globals.css` — production Meku brand design system
 
 ## Content integrity
 
 Restflow remains in pilot. No fabricated customer outcomes, testimonials, metrics or integrations were added.
+
+
+## Restflow product imagery
+
+The supplied Restflow screenshots are cropped to remove browser chrome, the operating-system taskbar and the account footer. The dashboard and variance previews also soften visible staff names. The actual application interface and product colour scheme are retained. The six WebP assets cover the dashboard, inventory overview, batch details, POS overview, recent orders and stock variance.
