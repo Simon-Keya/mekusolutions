@@ -21,19 +21,19 @@
       var b=document.createElement("button");
       b.className="stage"; b.type="button";
       b.setAttribute("aria-current",i===idx?"step":"false");
-      var dot=document.createElement("span"); dot.className="dot"; dot.setAttribute("aria-hidden","true");
+      var dot=document.createElement("span"); dot.className="dot"; dot.dataset.n=String(i+1); dot.setAttribute("aria-hidden","true");
       var n=document.createElement("span"); n.className="n"; n.textContent=s;
       b.appendChild(dot); b.appendChild(n);
       b.addEventListener("click",function(){ lastFocus=s; idx=i; render(); });
       li.appendChild(b); ol.appendChild(li);
     });
 
-    det.classList.add("is-updating");
+    det.innerHTML="";
+    var k=document.createElement("span"); k.className="kicker"; k.textContent="Stage "+(idx+1)+" of "+S.length;
     var h=document.createElement("h4"); h.textContent=S[idx]+": "+cur;
     var p=document.createElement("p"); p.textContent=D[cur][idx];
-    det.replaceChildren(h,p);
+    det.appendChild(k); det.appendChild(h); det.appendChild(p);
     det.setAttribute("aria-label", "Current Trace stage: "+S[idx]);
-    window.requestAnimationFrame(function(){ det.classList.remove("is-updating"); });
     Array.prototype.forEach.call(chips.children,function(c){
       c.setAttribute("aria-pressed",c.textContent===cur?"true":"false");
     });
