@@ -32,6 +32,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ t
                 <span>Instagram<small>@meku.solutions</small></span>
               </a>
             </div>
+            <img className="photo contact-photo" src="/images/photos/business-owner.webp" alt="A smiling business owner" width="900" height="1350" loading="lazy" />
           </div>
           <div className="form-card">
             <EnquiryForm key={t} initial={t === 'build' ? 'build' : 'demo'} />
