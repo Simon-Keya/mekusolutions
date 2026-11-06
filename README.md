@@ -2,6 +2,14 @@
 
 Next.js 15 + TypeScript production codebase for the Meku Solutions corporate website.
 
+## Design system v2 (dark, product-led)
+
+The site now follows a dark, cinematic shell with the logo gradient reserved for key moments:
+black `#211F20` header/hero/footer, white reading sections, yellow `#FAC513` actions and marquee band, yellow-to-orange gradient for the closing call to action.
+Real Restflow screenshots are framed in product windows, with cropped UI tiles floating over the hero. Illustrations are inline SVG (no stock photos).
+New assets: `public/images/ui/` (transparent logo marks, product crops) and `public/og.png` (social share image).
+Motion is limited to one hero entrance and the status marquee, and is disabled for reduced-motion users.
+
 ## Brand system
 
 The current interface is aligned to the supplied Meku Solutions logo:

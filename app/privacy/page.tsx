@@ -7,14 +7,13 @@ export default function Page() {
   return (
     <>
       <div className="ph1">
-        <div className="wrap">
-          <span className="section-label">Legal</span>
-          <h1 style={{ fontSize: 'clamp(2rem,5vw,3.2rem)' }}>Privacy</h1>
+        <div className="wrap-wide">
+          <h1>Privacy</h1>
           <p>Draft for legal review before launch. Last updated: October 2026.</p>
         </div>
       </div>
       <section>
-        <div className="wrap" style={{ maxWidth: '40rem' }}>
+        <div className="wrap prose" style={{ maxWidth: '44rem', marginInline: 0 }}>
           <h2 className="h3" style={{ fontSize: '1.25rem' }}>What we collect</h2>
           <p>
             When you submit a Restflow demo request or project enquiry, we collect the details you provide:
