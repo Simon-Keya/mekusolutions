@@ -7,6 +7,7 @@ export const enquirySchema = z.object({
   phone: z.string().trim().max(30).optional().default(''),
   company: z.string().trim().max(150).optional().default(''),
   role: z.string().trim().max(100).optional().default(''),
+  product: z.string().trim().max(60).optional().default(''),
   message: z.string().trim().min(10, 'Tell us a little more (at least 10 characters).').max(3000),
   website: z.string().optional().default(''),
 });

@@ -64,3 +64,25 @@ The supplied Restflow screenshots are cropped to remove browser chrome, the oper
 `public/images/photos/` holds four supplied stock photos (optimised to WebP): `restaurant-table`, `team-laptops`, `team-collab`, `business-owner`.
 They are stand-ins: confirm each photo's licence, and replace the team and founder imagery with real photos of Meku when available
 (edit the `src` in `content/home.html`, `content/about.html` and `app/contact/page.tsx`).
+
+
+## Growing the site (v3)
+
+Everything Meku offers is defined in `lib/registry.ts`.
+
+**Add a product**
+1. Add an entry to `products` (slug, name, status, tagline, summary, cta, preview image, `href: '/products/<slug>'`).
+2. Copy `content/products/_template.html` to `content/products/<slug>.html` and fill it with real, verified content.
+3. Done: navigation switches to a Products index, and the footer, sitemap, `/products`, home products section and the enquiry form's product selector update automatically. `/restflow` keeps its own URL.
+
+**Add a service**: add an entry to `services`; the home and Solutions grids rebalance automatically. Add an illustration key in `components/ServiceArt.tsx` if you want bespoke art (a generic one is used otherwise).
+
+**Embed dynamic modules in content files** with `<!--@services-home-->`, `<!--@services-full-->`, `<!--@products-home-->`.
+
+## Contact form and WhatsApp
+
+Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (digits only, country code included, e.g. `254XXXXXXXXX`) and rebuild. On submit the form opens WhatsApp with a pre-filled message and also sends a silent email record (requires the Resend variables). With no number set, the form submits by email only and the WhatsApp options are hidden.
+
+## Design system v3
+
+Radius scale: 4 / 6 / 8 / 12 / 16px (`--r-xs` … `--r-xl`, controls use `--r-ctl`). No pill buttons. See `docs/UI_UX_AUDIT.md` and `docs/REFINEMENT_PROMPT.md`.

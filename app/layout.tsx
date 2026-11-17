@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
+import NavLinks from '@/components/NavLinks';
+import { nav, primaryCta, products } from '@/lib/registry';
+import { cleanNumber } from '@/lib/whatsapp';
 
 const site = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
-const wa = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const wa = cleanNumber(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER);
 const pl = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
 export const metadata: Metadata = {
@@ -22,14 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-const nav = [
-  ['/', 'Home'],
-  ['/restflow', 'Restflow'],
-  ['/solutions', 'Solutions'],
-  ['/about', 'About'],
-  ['/work', 'Work'],
-  ['/contact', 'Contact'],
-] as const;
 
 export const viewport = { themeColor: '#211f20' };
 
@@ -61,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </defs>
         </svg>
         <Script src="/motion.js" strategy="afterInteractive" />
+        <a className="skip" href="#top">Skip to content</a>
         <header>
           <div className="wrap">
             <a className="logo" href="/" aria-label="Meku Solutions home">
@@ -70,14 +66,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <nav aria-label="Main navigation">
               <div className="nav-links">
-                {nav.map(([href, label]) => <a key={href} className="dl" href={href}>{label}</a>)}
+                <NavLinks items={nav} variant="bar" />
               </div>
-              <a className="btn btn-m" href="/contact">Request a Restflow Demo</a>
+              <a className="btn btn-m" href="/contact">{primaryCta}</a>
               <details className="mm">
                 <summary aria-label="Open menu">Menu</summary>
                 <div>
-                  {nav.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
-                  <a href="/contact">Request a Restflow Demo</a>
+                  <NavLinks items={nav} variant="menu" />
+                  <a href="/contact">{primaryCta}</a>
                   <a href="/contact?t=build">Build With Meku</a>
                 </div>
               </details>
@@ -99,7 +95,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="foot-cols">
                 <nav className="foot-col" aria-label="Product">
                   <h4>Product</h4>
-                  <a href="/restflow">Restflow</a>
+                  {products.map((p) => <a key={p.slug} href={p.href}>{p.name}</a>)}
+                  {products.length > 1 && <a href="/products">All products</a>}
                   <a href="/#trace">Restflow Trace</a>
                   <a href="/contact">Request a demo</a>
                 </nav>
@@ -115,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <a href="/contact">Talk to Meku</a>
                   <a href="mailto:mekusolutions@gmail.com">mekusolutions@gmail.com</a>
                   <a href="https://instagram.com/meku.solutions" rel="noopener">Instagram</a>
-                  {wa && <a href={`https://wa.me/${wa}`}>WhatsApp</a>}
+                  {wa && <a href={`https://wa.me/${wa}`} rel="noopener">WhatsApp</a>}
                 </nav>
               </div>
             </div>

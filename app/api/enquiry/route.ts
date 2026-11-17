@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   if (d.website) return NextResponse.json({ ok: true });
   const key = process.env.RESEND_API_KEY, to = process.env.ENQUIRY_TO_EMAIL, from = process.env.ENQUIRY_FROM_EMAIL;
   if (!key || !to || !from) { console.error('Enquiry email is not configured'); return NextResponse.json({ ok: false }, { status: 503 }); }
-  const text = [`Type: ${d.type === 'demo' ? 'Restflow demo' : 'Custom software / integration'}`, `Name: ${d.name}`, `Company: ${d.company}`, `Role: ${d.role}`, `Email: ${d.email}`, `Phone: ${d.phone}`, '', d.message].join('\n');
+  const text = [`Type: ${d.type === 'demo' ? 'Restflow demo' : 'Custom software / integration'}`, ...(d.product ? [`Product: ${d.product}`] : []), `Name: ${d.name}`, `Company: ${d.company}`, `Role: ${d.role}`, `Email: ${d.email}`, `Phone: ${d.phone}`, '', d.message].join('\n');
   try {
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
