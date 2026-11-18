@@ -85,4 +85,4 @@ Set `NEXT_PUBLIC_WHATSAPP_NUMBER` (digits only, country code included, e.g. `254
 
 ## Design system v3
 
-Radius scale: 4 / 6 / 8 / 12 / 16px (`--r-xs` … `--r-xl`, controls use `--r-ctl`). No pill buttons. See `docs/UI_UX_AUDIT.md` and `docs/REFINEMENT_PROMPT.md`.
+Shape system "soft, precise": 6 / 10 / 12 / 14 / 20 / 24px by role (`--r-xs` … `--r-xl`, controls use `--r-ctl`), with concentric inner/outer corners and no pills. See `docs/SHAPE_SYSTEM_PROMPT.md`, `docs/UI_UX_AUDIT.md` and `docs/REFINEMENT_PROMPT.md`.

@@ -31,12 +31,12 @@
   --wrap-wide: 1360px;
   --gutter: clamp(1.15rem, 4vw, 2.5rem);
   --sec: clamp(4.5rem, 8vw, 7.5rem);
-  --r-xs: 0.25rem;
-  --r-sm: 0.375rem;
-  --r-md: 0.5rem;
-  --r-lg: 0.75rem;
-  --r-xl: 1rem;
-  --r-ctl: 0.5rem;
+  --r-xs: 0.375rem;
+  --r-sm: 0.625rem;
+  --r-md: 0.875rem;
+  --r-lg: 1.25rem;
+  --r-xl: 1.5rem;
+  --r-ctl: 0.75rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 4.5rem;
   box-sizing: border-box;
@@ -150,7 +150,7 @@ header .btn { min-height: 2.8rem; font-size: .92rem; display: none; }
 .mm summary::-webkit-details-marker { display: none; }
 .mm[open] summary { background: #fff; color: var(--ink); }
 .mm > div { position: absolute; right: 0; top: calc(100% + .75rem); width: min(19rem, 86vw); display: grid; padding: .6rem; background: var(--ink-2); border: 1px solid var(--line-d); border-radius: var(--r-md); box-shadow: 0 30px 60px rgba(0,0,0,.4); }
-.mm > div a { padding: .85rem 1rem; text-decoration: none; border-radius: .7rem; font-weight: 500; }
+.mm > div a { padding: .85rem 1rem; text-decoration: none; border-radius: var(--r-sm); font-weight: 500; }
 .mm > div a:hover { background: rgba(255,255,255,.08); }
 .mm > div a:last-child { color: var(--yellow); }
 @media (min-width: 1000px) {
@@ -303,7 +303,7 @@ header .btn { min-height: 2.8rem; font-size: .92rem; display: none; }
 .chips button, .chip { font: 600 .9rem/1 var(--font-body); padding: .7rem 1rem; border-radius: var(--r-ctl); border: 1.5px solid var(--line); background: #fff; color: var(--text-2); cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
 .chips button:hover, .chip:hover { border-color: var(--ink); color: var(--ink); }
 .chips button[aria-pressed="true"], .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
-.pick .chips button { text-align: left; background: transparent; border-color: var(--line-d); color: var(--on-dark-2); border-radius: .8rem; }
+.pick .chips button { text-align: left; background: transparent; border-color: var(--line-d); color: var(--on-dark-2); border-radius: var(--r-ctl); }
 .pick .chips button:hover { border-color: var(--yellow); color: #fff; }
 .pick .chips button[aria-pressed="true"] { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
 .trace .note { position: relative; margin: 1.2rem 0 0; padding: 0; background: none; border: 0; font-size: .85rem; color: var(--on-dark-3); }
@@ -484,7 +484,7 @@ td:first-child { font: 600 1.1rem/1 var(--font-display); }
 form { display: grid; gap: 1rem; position: relative; }
 form label { display: grid; gap: .45rem; font: 600 .95rem/1.2 var(--font-body); color: var(--ink); }
 form input, form textarea {
-  width: 100%; font: 400 1rem/1.4 var(--font-body); color: var(--ink); padding: .95rem 1.05rem; border-radius: .9rem;
+  width: 100%; font: 400 1rem/1.4 var(--font-body); color: var(--ink); padding: .95rem 1.05rem; border-radius: var(--r-ctl);
   border: 1.5px solid var(--line); background: var(--mist); transition: border-color .2s, background .2s;
 }
 form input:hover, form textarea:hover { border-color: var(--mist-2); }
@@ -551,11 +551,11 @@ footer .wrap { max-width: var(--wrap-wide); }
 :focus-visible { border-radius: var(--r-xs, .25rem); }
 
 /* Shape: nested radii (outer = inner + padding) */
-.nav-links { border-radius: .8rem; }
-.nav-links a, .mm > div a, .mm summary { border-radius: var(--r-ctl); }
+.nav-links { border-radius: 1.05rem; }
+.nav-links a, .mm summary { border-radius: var(--r-ctl); }
 .mm > div { border-radius: var(--r-lg); }
 .mm > div a[aria-current="page"] { background: rgba(250,197,19,.16); color: var(--yellow); }
-.btn-m::after { border-radius: .3rem; }
+.btn-m::after { border-radius: .5rem; }
 .badge, .section-label, .showcase-copy .tag, .status { border-radius: var(--r-sm); }
 .window-dots i, .badge::before, .section-label::before, .status::before { border-radius: 50%; }
 .person .ph { border-radius: var(--r-ctl); box-shadow: none; }
@@ -628,7 +628,7 @@ footer .wrap { max-width: var(--wrap-wide); }
 
 /* Form system */
 .form-card { padding: clamp(1.25rem, 3vw, 2.25rem); border-radius: var(--r-xl); border: 1px solid var(--line); background: #fff; box-shadow: 0 1px 0 rgba(33,31,32,.04), 0 28px 56px -28px rgba(33,31,32,.22); }
-.seg { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; padding: .25rem; margin-bottom: 1.5rem; background: var(--mist); border-radius: .75rem; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem; padding: .25rem; margin-bottom: 1.5rem; background: var(--mist); border-radius: 1rem; }
 .seg button { padding: .8rem 1rem; border: 0; border-radius: var(--r-ctl); background: transparent; color: var(--text-2); font: 600 .95rem/1.25 var(--font-body); cursor: pointer; transition: background .2s, color .2s; }
 .seg button:hover:not([aria-pressed="true"]) { background: rgba(33,31,32,.06); color: var(--ink); }
 .seg button[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: 0 6px 14px -8px rgba(33,31,32,.6); }

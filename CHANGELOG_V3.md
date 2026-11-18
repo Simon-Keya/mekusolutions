@@ -8,3 +8,6 @@
 - Accessibility: skip link, server-rendered aria-current, linked field errors.
 - Privacy page covers WhatsApp. Inline styles removed from content. Unused contact photo deleted.
 - Tests: 18 passing (WhatsApp builder, number sanitiser, registry invariants, schema).
+
+## Shape system correction
+- Replaced the over-tight 6-16px scale with a role-based, concentric scale (6/10/12/14/20/24px): nav container 17px around 12px items, buttons 12px with concentric arrow badge, cards 20px, large surfaces 24px. See docs/SHAPE_SYSTEM_PROMPT.md.
